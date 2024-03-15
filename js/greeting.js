@@ -14,7 +14,7 @@ const onLoginSubmit = (e) => {
 };
 
 const paintGreetings = (username) => {
-  greeting.innerText = `Hello ${username}`;
+  greeting.innerText = `Hello, ${username}`;
   greeting.classList.remove(HIDDEN_CLASSNAME);
 };
 
