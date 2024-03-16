@@ -14,7 +14,22 @@ const onLoginSubmit = (e) => {
 };
 
 const paintGreetings = (username) => {
-  greeting.innerText = `Hello, ${username}`;
+  const date = new Date();
+  const hours = date.getHours();
+
+  if (hours < 12) {
+    greeting.innerText = `Good Morning, ${username}.`;
+  }
+  else if ((hours >= 12) && (hours < 18)){
+    greeting.innerText = `Good Afternoon, ${username}.`;
+  }
+  else if ((hours >= 18) && (hours < 21)){
+    greeting.innerText = `Good Evening, ${username}.`;
+  }
+  else {
+    greeting.innerText = `Good Night, ${username}.`;
+  }
+  
   greeting.classList.remove(HIDDEN_CLASSNAME);
 };
 

@@ -4,6 +4,10 @@ const temperature = document.querySelector("#temp");
 
 const WEATHER_API_KEY = "0b4f6fa44c6d1b8acd0cb6b1b0981f8f";
 
+// Weather Type: Rain, Clouds, Clear, etc...
+// set image that matches weather type
+
+
 const onGeoOk = (position) => {
   const lat = position.coords.latitude;
   const lon = position.coords.longitude;
