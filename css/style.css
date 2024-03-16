@@ -1,22 +1,47 @@
 @import "reset.css";
 
-* {
-  font-family: "Pretendard";
-}
-
 body {
+  font-family: "Pretendard";
   position: relative;
+  width: 100%;
+  height: 100%;
 }
 
 .hidden {
   display: none;
-} 
+}
+
+#login-form {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#login-form input {
+  width: 400px;
+  height: 20px;
+  
+  border: 0;
+  background-color: transparent;
+}
+
+#login-form button {
+  width: 100px;
+  height: 24px;
+  border: 0;
+  border-radius: 4px;
+}
+
+#login-form hr {
+  margin-top: 4px;
+}
 
 #clock {
-  color: white;
+  color: beige;
   font-size: 100px;
-  position: absolute;
-  top: 100px;
+  position: fixed;
+  top: 10%;
   left: 50%;
   transform: translate(-50%);
 }
@@ -24,8 +49,8 @@ body {
 #quotes {
   font-size: 20px;
   color: white;
-  position: absolute;
-  top: 680px;
+  position: fixed;
+  bottom: 50px;
   left: 50%;
   transform: translate(-50%);
 
@@ -42,4 +67,8 @@ body {
   height: 100%;
   z-index: -1;
   filter: brightness(40%);
+}
+
+#weather-container {
+  color: white;
 }
