@@ -42,7 +42,6 @@ body {
   background-color: transparent;
 
   border: 0;
-  border-radius: 4px;
 }
 
 #greeting {
@@ -88,7 +87,20 @@ body {
 
 #weather-container {
   color: white;
+  font-size: 25px;
   position: fixed;
-  top: 0;
-  right: 0;
+  top: 20px;
+  right: 35px;
+
+  display: grid;
+  grid-template-rows: 25px 25px;
+  grid-template-columns: 75px 1fr;
+  align-items: center;
+}
+
+#weatherImg {
+  filter: invert(100%);
+
+  width: 60px;
+  grid-row: 1 / 3;
 }

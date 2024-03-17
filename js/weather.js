@@ -1,26 +1,40 @@
-const weather = document.querySelector("#weather");
+const weatherContainer = document.querySelector("#weather-container");
 const city = document.querySelector("#city");
 const temperature = document.querySelector("#temp");
 
+// API: OpenWeather
 const WEATHER_API_KEY = "0b4f6fa44c6d1b8acd0cb6b1b0981f8f";
 
-// Weather Type: Rain, Clouds, Clear, etc...
-// set image that matches weather type
-
+const weatherImgs = ["Sunny.png", "Cloudy.png", "Rainy.png", "Snowy.png"];
 
 const onGeoOk = (position) => {
   const lat = position.coords.latitude;
   const lon = position.coords.longitude;
   const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${WEATHER_API_KEY}&units=metric`;
-  console.log(url);
+  
+  const weatherImg = document.createElement("img");
+  weatherImg.id = "weatherImg";
+  
   fetch(url)
     .then((res) => res.json())
     .then((data) => {
+      console.log(data);
       city.innerText = data.name;
-      weather.innerText = data.weather[0].main;
       temperature.innerText = `${data.main.temp}°C`;
-    });
-    
+
+      if (data.weather[0].main === "Clear") {
+        weatherImg.src = `img/${weatherImgs[0]}`;
+      } else if (data.weather[0].main === "Clouds") {
+        weatherImg.src = `img/${weatherImgs[1]}`;
+      } else if (data.weather[0].main === "Rain") {
+        weatherImg.src = `img/${weatherImgs[2]}`;
+      } else {
+        weatherImg.src = `img/${weatherImgs[3]}`;
+      }
+
+      weatherContainer.appendChild(weatherImg);
+      console.log(data.weather[0].main);
+    }); 
 };
 
 const onGeoError = () => {
