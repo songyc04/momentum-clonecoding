@@ -21,12 +21,13 @@ const onGeoOk = (position) => {
       console.log(data);
       city.innerText = data.name;
       temperature.innerText = `${data.main.temp}°C`;
+      const weather = data.weather[0].main;
 
-      if (data.weather[0].main === "Clear") {
+      if (weather === "Clear") {
         weatherImg.src = `img/${weatherImgs[0]}`;
-      } else if (data.weather[0].main === "Clouds") {
-        weatherImg.src = `img/${weatherImgs[1]}`;
-      } else if (data.weather[0].main === "Rain") {
+      } else if (weather === "Clouds") {
+        weatherImg.src = `img/${weather}.png`;
+      } else if (weather === "Rain") {
         weatherImg.src = `img/${weatherImgs[2]}`;
       } else {
         weatherImg.src = `img/${weatherImgs[3]}`;
