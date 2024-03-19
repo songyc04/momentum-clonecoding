@@ -55,13 +55,25 @@ body {
   transform: translate(-50%);
 }
 
-#clock {
-  color: beige;
-  font-size: 115px;
+#date-container {
   position: fixed;
   top: 10%;
   left: 50%;
   transform: translate(-50%);
+}
+
+#clock {
+  color: beige;
+  font-size: 115px;
+}
+
+#date {
+  color: beige;
+
+  font-size: 25px;
+  text-align: center;
+  
+  margin-top: 5px;
 }
 
 #quotes {

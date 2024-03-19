@@ -18,7 +18,7 @@ const onGeoOk = (position) => {
   fetch(url)
     .then((res) => res.json())
     .then((data) => {
-      console.log(data);
+      // console.log(data);
       city.innerText = data.name;
       temperature.innerText = `${data.main.temp}°C`;
       const weather = data.weather[0].main;
@@ -28,7 +28,7 @@ const onGeoOk = (position) => {
       } else if (weather === "Clouds") {
         weatherImg.src = `img/${weather}.png`;
       } else if (weather === "Rain") {
-        weatherImg.src = `img/${weatherImgs[2]}`;
+        weatherImg.src = `img/${weather}.png`;
       } else {
         weatherImg.src = `img/${weatherImgs[3]}`;
       }
