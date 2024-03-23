@@ -18,10 +18,10 @@ const onGeoOk = (position) => {
   fetch(url)
     .then((res) => res.json())
     .then((data) => {
-      // console.log(data);
       city.innerText = data.name;
       temperature.innerText = `${data.main.temp}°C`;
       const weather = data.weather[0].main;
+      console.log(weather);
 
       if (weather === "Clear") {
         weatherImg.src = `img/${weatherImgs[0]}`;
@@ -34,7 +34,6 @@ const onGeoOk = (position) => {
       }
 
       weatherContainer.appendChild(weatherImg);
-      console.log(data.weather[0].main);
     }); 
 };
 
