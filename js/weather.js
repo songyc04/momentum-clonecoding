@@ -10,18 +10,17 @@ const weatherImgs = ["Sunny.png", "Cloudy.png", "Rainy.png", "Snowy.png"];
 const onGeoOk = (position) => {
   const lat = position.coords.latitude;
   const lon = position.coords.longitude;
-  const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${WEATHER_API_KEY}&units=metric`;
+  const weatherURL = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${WEATHER_API_KEY}&units=metric`;
   
   const weatherImg = document.createElement("img");
   weatherImg.id = "weatherImg";
   
-  fetch(url)
+  fetch(weatherURL)
     .then((res) => res.json())
     .then((data) => {
       city.innerText = data.name;
-      temperature.innerText = `${data.main.temp}°C`;
+      temperature.innerText = `${data.main.temp.toFixed(1)}°C`;
       const weather = data.weather[0].main;
-      console.log(weather);
 
       if (weather === "Clear") {
         weatherImg.src = `img/${weatherImgs[0]}`;

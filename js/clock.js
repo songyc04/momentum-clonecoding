@@ -1,22 +1,22 @@
 const clock = document.querySelector("#clock");
 const date = document.querySelector("#date");
 
-const getDate = () => {
-  const dayDict = {
-    0: "Sun",
-    1: "Mon",
-    2: "Tue",
-    3: "Wed",
-    4: "Thu",
-    5: "Fri",
-    6: "Sat"
-  };
+const dayDict = {
+  0: "Sun",
+  1: "Mon",
+  2: "Tue",
+  3: "Wed",
+  4: "Thu",
+  5: "Fri",
+  6: "Sat"
+};
 
+const getDate = () => {
   const currentDay = new Date();
 
   const year = String(currentDay.getFullYear());
   const month = String(currentDay.getMonth() + 1).padStart(2, "0");
-  const day = String(currentDay.getDate());
+  const day = String(currentDay.getDate()).padStart(2, "0");
   let weekDay = currentDay.getDay();
   const len = Object.keys(dayDict).length;
 
