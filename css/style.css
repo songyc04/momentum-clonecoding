@@ -196,3 +196,13 @@ body {
 
   padding-top: 5px;
 }
+
+#weather-error {
+  color: white;
+
+  font-size: 20px;
+
+  position: fixed;
+  top: 20px;
+  right: 30px;
+}
