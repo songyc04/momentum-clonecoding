@@ -9,8 +9,11 @@ const onGeoOk = (position) => {
 
   const lat = position.coords.latitude;
   const lon = position.coords.longitude;
+
   const weatherURL = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${WEATHER_API_KEY}&units=metric`;
   
+  console.log(lat, lon);
+
   const weatherImg = document.createElement("img");
   const city = document.createElement("span");
   const temperature = document.createElement("span");
@@ -22,6 +25,7 @@ const onGeoOk = (position) => {
   fetch(weatherURL)
     .then((res) => res.json())
     .then((data) => {
+      console.log(data);
       city.innerText = data.name;
       temperature.innerText = `${data.main.temp.toFixed(1)}°C`;
       const weather = data.weather[0].main;
