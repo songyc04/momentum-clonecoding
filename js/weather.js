@@ -12,7 +12,7 @@ const onGeoOk = (position) => {
 
   const weatherURL = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${WEATHER_API_KEY}&units=metric`;
   
-  console.log(lat, lon);
+  // console.log(lat, lon);
 
   const weatherImg = document.createElement("img");
   const city = document.createElement("span");
